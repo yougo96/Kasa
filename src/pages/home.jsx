@@ -1,8 +1,10 @@
+import { Banner } from "../components/banner"
+
 export function Home ()   {
    
     return (
-        <div>
-            <h1>Home</h1>
-        </div>
+        <>
+            <Banner src="/src/assets/bannerHome.png">Chez vous, partout et ailleurs</Banner>
+        </>
     )
 }
