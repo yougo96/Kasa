@@ -194,6 +194,31 @@ details {
   }
 }
 
+.error-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 140px;
+  padding: 140px 0;
+
+  h1 {
+    margin: 0;
+    font-size: 288px;
+    font-weight: 700;
+    color: var(--main-color);
+  }
+  h2 {
+    margin: 0;
+    font-size: 36px;
+    color: var(--main-color);
+  }
+  a {
+    font-size: 18px;
+    color: black;
+  }
+}
+
 footer {
   display: flex;
   flex-direction: column;
