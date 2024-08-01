@@ -6,7 +6,7 @@ export function Rental ()   {
     
     return (
         <div>
-            <Banner src="/src/assets/bannerHome.png"></Banner>
+            <Banner src="/bannerHome.png" height="415px"></Banner>
             <h1>rental {id}</h1>
         </div>
     )

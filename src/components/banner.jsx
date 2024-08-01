@@ -1,8 +1,10 @@
-export function Banner ({children, src})   {
+export function Banner ({children, src, height})   {
    
     return (
-        <div className="banner">
-            <img src={src} alt="" />
+        <div className="banner" style={{height: height}}>
+            {src &&
+                <img src={src} alt="" />
+            }            
             {children &&
                 <>
                 <div className="banner-filter"></div>

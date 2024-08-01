@@ -1,4 +1,4 @@
-import kasaLogo from '../assets/kasa.svg'
+import kasaLogo from '/kasa.svg'
 
 export function Footer ()   {
     

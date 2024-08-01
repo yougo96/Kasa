@@ -4,7 +4,7 @@ export function Home ()   {
    
     return (
         <>
-            <Banner src="/src/assets/bannerHome.png">Chez vous, partout et ailleurs</Banner>
+            <Banner src="/bannerHome.png">Chez vous, partout et ailleurs</Banner>
         </>
     )
 }
