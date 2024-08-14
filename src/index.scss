@@ -1,3 +1,5 @@
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css");
+
 :root {
   font-family: "Montserrat", sans-serif;
 
@@ -159,6 +161,7 @@ main {
 
 details {
   width: 100%;
+  height: fit-content;
   
   background-color:#F6F6F6;
   border-radius: 5px;
@@ -175,16 +178,22 @@ details {
     font-weight: 700;
     border-radius: 5px;
     padding: 10px 15px;
+    cursor: pointer;
 
     &::marker {
       display: none;
+      font-size: 0;
     }
     &::after {
       content: "<";
       float: right;
     }
   }
+  &[open] summary{
+    margin-bottom: 0.5rem;
+  }
   &[open] {
+
     .details-content {
       opacity: 1;
     }
@@ -237,3 +246,90 @@ footer {
     filter: invert(1);
   }
 }
+
+.rental-container {
+
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+ 
+  .rental-title {
+    h1 {
+      font-size: 36px;
+      font-weight: 500;
+      color: var(--main-color);
+      margin: 0;
+    }
+    span {
+      font-size: 18px;
+      font-weight: 500;
+    }
+  }
+
+  .rental-infos {
+    display: grid;
+    grid-template-columns: 4fr 1fr;
+  }
+
+  .rental-details {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4.5rem;
+
+    min-height: 20rem;
+  }
+
+}
+
+.tags {
+  list-style: none;
+
+  display: flex;
+  gap: 10px;
+
+  padding-inline-start: 0px;
+
+  li {
+    background-color: var(--main-color);
+    padding: 10px 30px;
+    color: white;
+    font-weight: 700;
+    border-radius: 10px;
+  }
+}
+
+.stars {
+  display: flex;
+  justify-content: flex-end;
+
+  ul {
+    list-style: none;
+    display: flex;
+    gap: 10px;
+    color: #E3E3E3;
+    .bi-main {
+      color: var(--main-color);
+    }
+    ::before {  
+      font-size: 24px;
+    }
+  }
+}
+
+.profileBadge {
+  display: flex;
+
+  color: var(--main-color);
+  font-size: 18px;
+  font-weight: 500;
+  text-align: end;
+  word-spacing: 100vw;
+
+  gap: 10px;
+
+  img {
+    height: 64px;
+    border-radius: 64px;
+  }
+}
+
