@@ -1,3 +1,6 @@
+/**
+ * @param {object} children - The tags to be rendered.
+ */
 export function Tags ({children})   {
     
     return (

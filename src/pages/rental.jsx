@@ -15,15 +15,15 @@ export function Rental ()   {
     return (
         <>
             {thisRentalData.map((data, index) => (
-                <div key={index} className="rental-container">
-                    <Banner src={data.cover} height="415px"></Banner>
+                <div key={"rData"+index} className="rental-container">
+                    <Banner src={data.pictures} height="415px"></Banner>
 
                     <section className="rental-infos">
                         <div>
-                            <p className="rental-title">
+                            <div className="rental-title">
                                 <h1>{data.title}</h1>
                                 <span>{data.location}</span>
-                            </p>
+                            </div>
                             <Tags>{data.tags}</Tags>
                         </div>
                         <div>
@@ -33,11 +33,11 @@ export function Rental ()   {
                     </section>
 
                     <section className="rental-details">
-                        <Collapse key={index} title="Description">
+                        <Collapse key={"co-rd"+index} title="Description">
                             {data.description}
                         </Collapse>
-                        <Collapse key={index} title="Equimpents">
-                            {data.equipments.map((equipments, index) => (<p key={index}>{equipments}</p>))}
+                        <Collapse key={"co-re"+index} title="Equipements">
+                            {data.equipments.map((equipments, index) => (<p key={"re"+index}>{equipments}</p>))}
                         </Collapse>
                     </section>
                     

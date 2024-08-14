@@ -11,7 +11,7 @@ export function Home ()   {
             <div className="home-container">
                 {rentalData.map((data, index) => (
                     // <div key={index}>{data.title}</div>
-                    <RentalCard key={index} id={data.id} title={data.title} src={data.cover} />
+                    <RentalCard key={"rc"+index} id={data.id} title={data.title} src={data.cover} />
                 ))}
             </div>
         </>
