@@ -17,17 +17,17 @@ export function Rental ()   {
             <>
                 {thisRentalData.map((data, index) => (
                     <div key={"rData"+index} className="rental-container">
-                        <Banner src={data.pictures} height="415px"></Banner>
+                        <Banner src={data.pictures} height="32rem"></Banner>
 
                         <section className="rental-infos">
-                            <div>
+                            <div className="rental-infos-1">
                                 <div className="rental-title">
                                     <h1>{data.title}</h1>
                                     <span>{data.location}</span>
                                 </div>
                                 <Tags>{data.tags}</Tags>
                             </div>
-                            <div>
+                            <div className="rental-infos-2">
                                 <ProfileBadge>{data.host}</ProfileBadge>
                                 <Stars>{data.rating}</Stars>
                             </div>
