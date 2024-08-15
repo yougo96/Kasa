@@ -12,37 +12,42 @@ export function Rental ()   {
 
     const thisRentalData = rentalData.filter(i=>i.id==urlid)
     
-    return (
-        <>
-            {thisRentalData.map((data, index) => (
-                <div key={"rData"+index} className="rental-container">
-                    <Banner src={data.pictures} height="415px"></Banner>
+    if (thisRentalData.length != 0) {
+        return (
+            <>
+                {thisRentalData.map((data, index) => (
+                    <div key={"rData"+index} className="rental-container">
+                        <Banner src={data.pictures} height="415px"></Banner>
 
-                    <section className="rental-infos">
-                        <div>
-                            <div className="rental-title">
-                                <h1>{data.title}</h1>
-                                <span>{data.location}</span>
+                        <section className="rental-infos">
+                            <div>
+                                <div className="rental-title">
+                                    <h1>{data.title}</h1>
+                                    <span>{data.location}</span>
+                                </div>
+                                <Tags>{data.tags}</Tags>
                             </div>
-                            <Tags>{data.tags}</Tags>
-                        </div>
-                        <div>
-                            <ProfileBadge>{data.host}</ProfileBadge>
-                            <Stars>{data.rating}</Stars>
-                        </div>
-                    </section>
+                            <div>
+                                <ProfileBadge>{data.host}</ProfileBadge>
+                                <Stars>{data.rating}</Stars>
+                            </div>
+                        </section>
 
-                    <section className="rental-details">
-                        <Collapse key={"co-rd"+index} title="Description">
-                            {data.description}
-                        </Collapse>
-                        <Collapse key={"co-re"+index} title="Equipements">
-                            {data.equipments.map((equipments, index) => (<p key={"re"+index}>{equipments}</p>))}
-                        </Collapse>
-                    </section>
-                    
-                </div>
-            ))}
-        </>
-    )
+                        <section className="rental-details">
+                            <Collapse key={"co-rd"+index} title="Description">
+                                {data.description}
+                            </Collapse>
+                            <Collapse key={"co-re"+index} title="Equipements">
+                                {data.equipments.map((equipments, index) => (<p key={"re"+index}>{equipments}</p>))}
+                            </Collapse>
+                        </section>
+                        
+                    </div>
+                ))}
+            </>
+        )
+    }
+    else {
+        window.location.href = `/error/`
+    }
 }
