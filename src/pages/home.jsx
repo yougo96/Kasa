@@ -6,7 +6,7 @@ import rentalData from '../assets/rental.json';
 export function Home ()   {
    
     return (
-        <>
+        <div className="main-container">
             <Banner src="/bannerHome.png">Chez vous, partout et ailleurs</Banner>
             <div className="home-container">
                 {rentalData.map((data, index) => (
@@ -14,6 +14,6 @@ export function Home ()   {
                     <RentalCard key={"rc"+index} id={data.id} title={data.title} src={data.cover} />
                 ))}
             </div>
-        </>
+        </div>
     )
 }

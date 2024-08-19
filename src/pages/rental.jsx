@@ -14,7 +14,7 @@ export function Rental ()   {
     
     if (thisRentalData.length != 0) {
         return (
-            <>
+            <div className="main-container">
                 {thisRentalData.map((data, index) => (
                     <div key={"rData"+index} className="rental-container">
                         <Banner src={data.pictures} height="32rem"></Banner>
@@ -44,7 +44,7 @@ export function Rental ()   {
                         
                     </div>
                 ))}
-            </>
+            </div>
         )
     }
     else {

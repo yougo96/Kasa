@@ -6,7 +6,7 @@ import aboutData from '../assets/about.json';
 export function About ()   {
    
     return (
-        <div>
+        <div className="main-container">
             <Banner src="/bannerAbout.png">&nbsp;</Banner>
             <h1>About</h1>
             <div className="about-container">
