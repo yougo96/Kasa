@@ -3,19 +3,48 @@ import { Banner } from "../components/banner"
 import { Collapse } from "../components/collapse"
 import { Tags } from "../components/tags"
 import { Stars } from "../components/stars"
-
-import rentalData from '../assets/rental.json';
 import { ProfileBadge } from "../components/profileBadge"
+
+import { useEffect, useState } from "react"
 
 export function Rental ()   {
     const {urlid} = useParams()
 
-    const thisRentalData = rentalData.filter(i=>i.id==urlid)
+    const [rental, setRental] = useState([])
+    const [fetched, setFetched] = useState(false)
+
+    useEffect(() => {
+      console.log("http://localhost:3000/rental/" + urlid.toString());
+
+        fetch("http://localhost:3000/rental/" + urlid.toString())
+            .then(response => {
+
+                setFetched(true)
+
+                if (response.ok) {
+                    response.json()
+                    .then((data) => {
+                        let tempArray = []
+                        tempArray.push(data)
+                        setRental(tempArray)
+                    })
+                } else {
+                    setRental(null)
+                    throw new Error(response.status)
+                }
+            })
+            .catch((error) => {
+                setFetched(false)
+                console.log(error)
+            })
+
+    }, [urlid])
+
+    console.log(rental)
     
-    if (thisRentalData.length != 0) {
-        return (
+    return fetched ? (     
             <div className="main-container">
-                {thisRentalData.map((data, index) => (
+                {rental.map((data, index) => (
                     <div key={"rData"+index} className="rental-container">
                         <Banner src={data.pictures} height="32rem"></Banner>
 
@@ -45,9 +74,14 @@ export function Rental ()   {
                     </div>
                 ))}
             </div>
-        )
-    }
-    else {
-        window.location.href = `/error/`
-    }
+    )
+    : (        
+        <div className="main-container">
+            <h1>Loading</h1>
+            {
+            rental ? (<h2>please wait</h2>) : (window.location.href = `/error/`)
+            }
+        </div>
+        
+    )
 }

@@ -1,7 +1,7 @@
 import { Banner } from "../components/banner"
 import { Collapse } from "../components/collapse"
 
-import aboutData from '../assets/about.json';
+const apiAboutData = await fetch('http://localhost:3000/about/').then(response => response.json())
 
 export function About ()   {
    
@@ -10,7 +10,7 @@ export function About ()   {
             <Banner src="/bannerAbout.png">&nbsp;</Banner>
             <h1>About</h1>
             <div className="about-container">
-                {aboutData.map((data, index) => (
+                {apiAboutData.map((data, index) => (
                     <Collapse key={index} title={data.title}>{data.content}</Collapse>
                 ))}
             </div>
