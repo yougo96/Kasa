@@ -1,3 +1,5 @@
+import './stars.scss'
+
 export function Stars ({children})   {
     let starsNumber = parseInt(children)
     

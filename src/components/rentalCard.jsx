@@ -1,3 +1,5 @@
+import './rentalCard.scss'
+
 export function RentalCard ({id, title, src})   {
     
     return (

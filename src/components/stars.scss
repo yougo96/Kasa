@@ -1,0 +1,20 @@
+.stars {
+    display: flex;
+    justify-content: flex-end;
+
+    ul {
+        list-style: none;
+        display: flex;
+        gap: 10px;
+        color: #E3E3E3;
+        padding: 0;
+
+        .bi-main {
+            color: var(--main-color);
+        }
+
+        ::before {
+            font-size: 1.5rem;
+        }
+    }
+}

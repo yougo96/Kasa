@@ -1,3 +1,5 @@
+import './tags.scss'
+
 export function Tags ({children})   {
     
     return (

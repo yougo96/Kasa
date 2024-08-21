@@ -1,3 +1,5 @@
+import './collapse.scss'
+
 export function Collapse ({title, children})   {
     
      return (

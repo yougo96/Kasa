@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import './banner.scss'
 
 export function Banner({ children, src, height }) {
 

@@ -1,4 +1,5 @@
 import kasaLogo from '/kasa.svg'
+import './footer.scss'
 
 export function Footer ()   {
     

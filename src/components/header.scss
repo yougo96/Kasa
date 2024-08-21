@@ -1,0 +1,39 @@
+$small: 767.98px;
+$medium: 1024px;
+
+header {
+    nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        font-weight: 500;
+        font-size: 1.5rem;
+
+        .nav-group {
+            display: flex;
+            gap: 57px;
+
+            @media screen and (max-width: $small) {
+                flex-direction: column;
+                gap: 8px;
+            }
+        }
+
+        a {
+            text-decoration: none;
+            color: black;
+        }
+
+        a.active {
+            text-decoration: underline;
+        }
+
+        img {
+            height: 4rem;
+            color: var(--main-color) !important;
+            fill: var(--main-color) !important;
+            filter: invert(71%) sepia(75%) saturate(4726%) hue-rotate(323deg) brightness(100%) contrast(110%);
+        }
+    }
+}

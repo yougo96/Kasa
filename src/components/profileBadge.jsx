@@ -1,3 +1,5 @@
+import './profileBadge.scss'
+
 export function ProfileBadge ({children})   {
     
     return (
