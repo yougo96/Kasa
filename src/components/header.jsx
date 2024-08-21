@@ -12,6 +12,7 @@ export function Header ()   {
                 <div className='nav-group'>
                     <NavLink to="/">Accueil</NavLink>
                     <NavLink to="/about">A propos</NavLink>
+                    <NavLink to="/login">Connexion</NavLink>
                 </div>                       
             </nav>
         </header>

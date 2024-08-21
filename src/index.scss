@@ -56,7 +56,8 @@ header {
       gap: 57px;
 
       @media screen and (max-width: $small) {
-        gap: 26px;
+        flex-direction: column;
+        gap: 8px;
       }
     }
 
@@ -178,7 +179,7 @@ main {
     padding: 0;
   }
   
-  article {
+  article, .btn-add {
     display: flex;
     align-items: flex-end;
 
@@ -222,7 +223,15 @@ main {
         opacity: 0.2;
       }
     }
+  }
 
+  .btn-add {
+    background-color: var(--main-color);
+    color: white;
+    font-size: 12rem;
+
+    align-items: center;
+    justify-content: center;
   }
 }
 
