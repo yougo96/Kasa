@@ -1,57 +1,69 @@
-article,
-.btn-add {
-    display: flex;
-    align-items: flex-end;
+.home-container {
+    article,.btn-add {
+        display: flex;
+        align-items: flex-end;
 
-    overflow: hidden;
-    position: relative;
-
-    aspect-ratio: 1 / 1;
-    padding: 20px;
-
-    border-radius: 10px;
-
-    cursor: pointer;
-
-    img {
-        position: absolute;
-        top: -20px;
-        left: -20px;
-        height: calc(100% + 40px);
-        width: calc(100% + 40px);
-        object-fit: cover;
-    }
-
-    .rental-filter {
-        position: absolute;
-        top: -20px;
-        left: -20px;
-        height: calc(100% + 40px);
-        width: calc(100% + 40px);
-        background: linear-gradient(0deg, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0) 50%);
-        opacity: 0.6;
-    }
-
-    h2 {
-        z-index: 10;
+        overflow: hidden;
         position: relative;
-        color: white;
-        font-size: 24px;
-        font-weight: 700;
-    }
 
-    &:hover {
+        aspect-ratio: 1 / 1;
+        padding: 20px;
+
+        border-radius: 10px;
+
+        cursor: pointer;
+
+        .btn-delete {
+            margin: 12px;
+            padding: 9px;
+            color: white;
+            background-color: black;
+            border: 0;
+            border-radius: 5px;
+            position: absolute;
+            top: 0; right: 0;
+        }
+
+        img {
+            position: absolute;
+            top: -20px;
+            left: -20px;
+            height: calc(100% + 40px);
+            width: calc(100% + 40px);
+            object-fit: cover;
+        }
+
         .rental-filter {
-            opacity: 0.2;
+            position: absolute;
+            top: -20px;
+            left: -20px;
+            height: calc(100% + 40px);
+            width: calc(100% + 40px);
+            background: linear-gradient(0deg, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0) 50%);
+            opacity: 0.6;
+        }
+
+        h2 {
+            z-index: 10;
+            position: relative;
+            color: white;
+            font-size: 24px;
+            font-weight: 700;
+        }
+
+        &:hover {
+            .rental-filter {
+                opacity: 0.2;
+            }
         }
     }
-}
 
-.btn-add {
-    background-color: var(--main-color);
-    color: white;
-    font-size: 12rem;
+    .btn-add {
+        background-color: var(--main-color);
+        color: white;
+        font-size: 12rem;
 
-    align-items: center;
-    justify-content: center;
+        align-items: center;
+        justify-content: center;
+    }
 }
