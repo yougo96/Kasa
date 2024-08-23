@@ -1,22 +1,22 @@
 import { useState, useEffect } from "react"
 const apiUrl = "http://localhost:3000/"
 
-export function useFetch(url, options = {}) {
+export function useFetch() {
     
     const [apiData, setApiData] = useState(null)
     const [isLoading, setIsLoading] = useState(true)
     const [error, setError] = useState(null)
-    
-    useEffect(() => {
 
-        console.log(apiUrl+url)
+    const makeRequest = async (url, options = {}) => {
 
-        fetch(apiUrl+url.toString(), 
-            {
+        console.log("requesting "+apiUrl+url)
+
+        await fetch(apiUrl+url.toString(), 
+        {
             ...options,
             headers: {
                 ...options.headers
-            }
+        }
         }).then((response) => {
             if (!response.ok) {
                 throw Error(response.status)
@@ -35,10 +35,11 @@ export function useFetch(url, options = {}) {
         .finally(
             setError(null)
         )
+    }
 
-        }, [])
+    console.log(apiData, isLoading, error)
+    return { makeRequest, apiData, isLoading, error }
 
-        return {apiData, isLoading, error}
 }
 
 export function useConnexion() {

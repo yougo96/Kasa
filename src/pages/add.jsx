@@ -4,35 +4,31 @@ import { useFetch, useConnexion } from "../assets/hooks"
 export function Add ()   {
     
     const { connected } = useConnexion()
-   
+
     const [formValid, setFormValid] = useState(true)
+   
+    const { makeRequest, apiData, isLoading, error } = useFetch()
+
 
     const handleAdd = async (event) => {
         event.preventDefault();
 
-        const formData = new FormData(event.target)
+        let formData = new FormData(event.target)
         formData.set("id", (Math.random()*1000000000000000000).toString(36))
 
-        fetch("http://localhost:3000/rental", {
+        await makeRequest('rental', {
             method: "POST",
             headers: {
                 'Content-Type': 'application/json',
             },
             body: JSON.stringify(Object.fromEntries(formData))
         })
-        .then(
-            response => { 
-                response.json()
-                console.log("Rental added")
-        }
-        )
-        .catch(error => 
-            {
-                console.log(error)
-                setFormValid(false)
-            }
-        )
 
+        if (!error) {
+            window.location.href = "/"
+        } else {
+            setFormValid(false)
+        }
     }
 
     return (
@@ -41,7 +37,7 @@ export function Add ()   {
         <div className="main-container">
             <article className="form-container">
                 <h1>Ajouter un logement</h1>
-                {formValid ? null : <h3 role="alert" style={{color:"red"}}>Invalid</h3>}
+                {formValid ? null : <h3 role="alert" style={{color:"red"}}>Invalid {error}</h3>}
                 <span></span>
                 <form onSubmit={(e) => handleAdd(e)}>
 

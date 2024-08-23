@@ -1,10 +1,15 @@
 import { Banner } from "../components/banner"
 import { Collapse } from "../components/collapse"
 import { useFetch, useConnexion } from "../assets/hooks"
+import { useEffect } from "react"
 
 export function About ()   {
 
-    const { apiData, isLoading, error } = useFetch('about')
+    const { makeRequest, apiData, isLoading, error } = useFetch('about')
+
+    useEffect(() => {
+        makeRequest('about')
+    }, [])
    
     return (
         <div className="main-container">
@@ -12,7 +17,7 @@ export function About ()   {
             <h1>About</h1>
             <div className="about-container">
                 {
-                    isLoading && <div>Loading</div> || error && <div>Error : {error}</div> ||
+                    error && <div>Error : {error}</div> || isLoading && <div>Loading</div> || 
                     apiData &&
                     apiData.map((data, index) => (
                         <Collapse key={index} title={data.title}>{data.content}</Collapse>

@@ -6,11 +6,17 @@ import { Stars } from "../components/stars"
 import { ProfileBadge } from "../components/profileBadge"
 
 import { useFetch, useConnexion } from "../assets/hooks"
+import { useEffect } from "react"
 
 export function Rental ()   {
     const {urlid} = useParams()
 
-    const { apiData, isLoading, error } = useFetch('rental/' + urlid)
+    const { makeRequest, apiData, isLoading, error } = useFetch()
+
+    useEffect   (() => {
+        makeRequest('rental/' + urlid)
+    }, [])
+
     let tempArray = [];
     tempArray.push(apiData)
     
@@ -18,8 +24,11 @@ export function Rental ()   {
         <div className="main-container">
             <div className="rental-container">
                 {
+                    
                     isLoading && <div>Loading</div> ||
-                    error && (window.location.href = `/error/`) ||
+                    error && (
+                        window.location.href = `/error/${error}`
+                    ) ||                    
                     apiData &&
                     tempArray.map((data, index) => (
                         <>
@@ -43,8 +52,9 @@ export function Rental ()   {
                                 <Collapse key={"co-rd" + index} title="Description">
                                     {data.description}
                                 </Collapse>
+                                
                                 <Collapse key={"co-re" + index} title="Equipements">
-                                    {data.equipments.map((equipments, index) => (
+                                    {Array.isArray(data.equipments) && data.equipments.map((equipments, index) => (
                                         <p key={"re" + index}>{equipments}</p>
                                     ))}
                                 </Collapse>
