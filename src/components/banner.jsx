@@ -28,11 +28,17 @@ export function Banner({ children, src, height }) {
       {src && Array.isArray(src) ? (
 
         <>
+        
+        <div className='banner-Carousel' style={{transform: `translateX(${count * -100}%)`}}>        
+        {src.map((data, index) => (
+            <img loading="lazy" src={data} alt="" key={index} style={{transform: `translateX(${100 * index}%)`}}/>
+        ))}
+        {/* <img loading="lazy" src={null} alt="" style={{backgroundImage: `url(${src[count]})`}}/> */}
+        </div>
+
         <button className="banner-btn" data-action="prev" onClick={changeCount}><i className="bi bi-chevron-left"></i></button>
-
-        <img loading="lazy" src={null} alt="" style={{backgroundImage: `url(${src[count]})`}}/>
-
         <button className="banner-btn" data-action="next" onClick={changeCount}><i className="bi bi-chevron-right"></i></button>
+        
         <div className="banner-count">
             <span>{count + 1}</span>
             <span>/</span>
