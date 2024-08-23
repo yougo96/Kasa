@@ -1,3 +1,5 @@
+@import "src/assets/_variables.scss";
+
 .home-container {
     article,.btn-add {
         display: flex;
@@ -59,7 +61,7 @@
     }
 
     .btn-add {
-        background-color: var(--main-color);
+        background-color: $main-color;
         color: white;
         font-size: 12rem;
 

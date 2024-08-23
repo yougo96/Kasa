@@ -1,8 +1,8 @@
-$small: 767.98px;
-$medium: 1024px;
+@import "src/assets/_variables.scss";
 
 header {
     nav {
+        user-select: none;
         display: flex;
         justify-content: space-between;
         align-items: center;
@@ -32,8 +32,8 @@ header {
 
         img {
             height: 4rem;
-            color: var(--main-color) !important;
-            fill: var(--main-color) !important;
+            color: $main-color !important;
+            fill: $main-color !important;
             filter: invert(71%) sepia(75%) saturate(4726%) hue-rotate(323deg) brightness(100%) contrast(110%);
         }
     }

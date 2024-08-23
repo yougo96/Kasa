@@ -1,3 +1,5 @@
+@import "src/assets/_variables.scss";
+
 .stars {
     display: flex;
     justify-content: flex-end;
@@ -10,7 +12,7 @@
         padding: 0;
 
         .bi-main {
-            color: var(--main-color);
+            color: $main-color;
         }
 
         ::before {

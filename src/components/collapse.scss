@@ -1,17 +1,24 @@
+@import "src/assets/_variables.scss";
+
 details {
+    user-select: none;
     width: 100%;
-    height: fit-content;
-
-    background-color: #F6F6F6;
     border-radius: 5px;
-
+    overflow: hidden;
+   
     .details-content {
         padding: 25px 20px;
-        opacity: 0;
+        background-color: coral;
+
+        opacity: 0.1;        
+        transform: translate(0, -100%);
+
+        transition: transform 1s ease, opacity 1s ease;
+
     }
 
     summary {
-        background-color: var(--main-color);
+        background-color: $main-color;
         color: white;
         font-size: 1.5rem;
         font-weight: 700;
@@ -26,22 +33,28 @@ details {
 
         &::after {
             content: "<";
+            rotate: 0deg;
+            transition: rotate 300ms ease;
             float: right;
         }
     }
 
-    &[open] summary {
-        margin-bottom: 0.5rem;
-    }
-
     &[open] {
 
-        .details-content {
+        
+
+        .details-content {     
+
             opacity: 1;
+            transform: translate(0, 0);
+        
+        }
+
+        summary {
         }
 
         summary::after {
-            content: "˅";
+            rotate: -90deg;
         }
     }
 }

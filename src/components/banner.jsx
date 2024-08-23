@@ -44,7 +44,6 @@ export function Banner({ children, src, height }) {
         <img src={src} alt="" />
       )}
       
-
       {children && (
         <>
           <div className="banner-filter" />

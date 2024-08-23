@@ -1,18 +1,23 @@
 import { Banner } from "../components/banner"
 import { Collapse } from "../components/collapse"
-
-const apiAboutData = await fetch('http://localhost:3000/about/').then(response => response.json())
+import { useFetch, useConnexion } from "../assets/hooks"
 
 export function About ()   {
+
+    const { apiData, isLoading, error } = useFetch('about')
    
     return (
         <div className="main-container">
             <Banner src="/bannerAbout.png">&nbsp;</Banner>
             <h1>About</h1>
             <div className="about-container">
-                {apiAboutData.map((data, index) => (
-                    <Collapse key={index} title={data.title}>{data.content}</Collapse>
-                ))}
+                {
+                    isLoading && <div>Loading</div> || error && <div>Error : {error}</div> ||
+                    apiData &&
+                    apiData.map((data, index) => (
+                        <Collapse key={index} title={data.title}>{data.content}</Collapse>
+                    ))
+                }
             </div>
         </div>
     )
