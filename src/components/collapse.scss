@@ -1,20 +1,25 @@
 @import "src/assets/_variables.scss";
 
-details {
+#details {
     user-select: none;
     width: 100%;
     border-radius: 5px;
     overflow: hidden;
+
+    // content-visibility: visible !important;
    
     .details-content {
-        padding: 25px 20px;
-        background-color: coral;
+        background-color: $secondary-color;
+        pointer-events: none;
+        font-weight: 400;
 
-        opacity: 0.1;        
-        transform: translate(0, -100%);
+        padding: 0 20px;
+        opacity: 0.0;
+        max-height: 0;      
+        transform: translate(0, -3rem); 
 
-        transition: transform 1s ease, opacity 1s ease;
-
+        position: relative;
+        z-index: 0;
     }
 
     summary {
@@ -25,6 +30,9 @@ details {
         border-radius: 5px;
         padding: 10px 15px;
         cursor: pointer;
+
+        position: relative;
+        z-index: 99;
 
         &::marker {
             display: none;
@@ -44,9 +52,10 @@ details {
         
 
         .details-content {     
-
+            padding: 25px 20px;
             opacity: 1;
-            transform: translate(0, 0);
+            max-height: fit-content;
+            transform: translate(0, 0); 
         
         }
 
