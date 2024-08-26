@@ -15,21 +15,37 @@ export function Add ()   {
         event.preventDefault();
 
         let formData = new FormData(event.target)
-        formData.set("id", (Math.random()*1000000000000000000).toString(36))
+
+        let bodyInput = {
+            "id": (Math.random()*1000000000000000000).toString(36),
+            "title": formData.get("title"),
+            "cover": formData.get("cover"),
+            "pictures": formData.getAll("pictures").toString().split(","),
+            "description":  formData.get("description"),
+            "host": {
+              "name": formData.get("host"),
+              "picture": formData.get("hostPic")
+            },
+            "rating": formData.get("rating"),
+            "location": formData.get("location"),
+            "equipments": formData.getAll("equipments").toString().split(","),
+            "tags": formData.getAll("tags").toString().split(",")
+          }
 
         await makeRequest('rental', {
             method: "POST",
             headers: {
                 'Content-Type': 'application/json',
             },
-            body: JSON.stringify(Object.fromEntries(formData))
+            // body: JSON.stringify(Object.fromEntries(formData))
+            body: JSON.stringify(bodyInput)
         })
 
         if (!error) {
             window.location.href = "/"
         } else {
             setFormValid(false)
-        }
+        }        
     }
 
     return (
@@ -48,29 +64,27 @@ export function Add ()   {
                     <input id="location" type="text" name="location" placeholder="location" required/>
                     <hr />
                     <h3>Hote</h3>
-                    <input id="host" type="text" name="host" placeholder="host name" required/>
+                    <div>
+                        <input id="host" type="text" name="host" placeholder="host name" required/>
+                        <input id="hostPic" type="text" name="hostPic" placeholder="host avatar" required/>
+                    </div>
                     <hr />
                     <h3>Notation</h3>
                     <div>
-                        <label htmlFor="rating">Stars  </label>
-                        <input id="rating" type="range" min="1" max="5" step="1" name="rating" required/>
+                        <label htmlFor="rating">Stars : </label>
+                        <span id="rateValue">5</span>
+                        <input id="rating" type="range" min="1" max="5" step="1" name="rating" onChange={(e) => document.querySelector("#rateValue").innerHTML = e.target.value} required/>
                     </div>
                     <hr />
                     <h3>Equipements</h3>
-                    <div>
-                        <input id="equipments" type="equipmentInput" name="equipments" placeholder="equipments"/>
-                    </div>
+                    <input id="equipments" type="equipmentInput" name="equipments" placeholder="equipments  ( , comma to separate)"/>
                     <hr />
                     <h3>Tags</h3>
-                    <div>
-                        <input id="tags" type="text" name="tags" placeholder="tags"/>
-                    </div>
+                    <input id="tags" type="text" name="tags" placeholder="tags ( , comma to separate)"/>
                     <hr />
                     <h3>Images</h3>
                     <input id="cover" type="text" name="cover" placeholder="cover" required/>
-                    <div>
-                        <input id="pictures" type="text" name="pictures" placeholder="pictures"/>
-                    </div>
+                    <input id="pictures" type="text" name="pictures" placeholder="pictures ( , comma to separate)"/>
                     
                     <input id="submit" type="submit" value="Ajouter" />
                 </form>

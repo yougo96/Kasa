@@ -130,6 +130,7 @@ main {
         display: flex;
         flex-direction: row-reverse;
         align-items: center;
+        justify-content: space-between;
       }
     }
 
@@ -190,6 +191,32 @@ main {
       gap: 10px;
     }
   }
+
+  input[type="range"] {
+    appearance: none; 
+    width: 80%;
+    margin-left: auto;
+    cursor: pointer;
+    outline: none;
+    
+    overflow: hidden;
+    border-radius: 32px;
+
+    padding: 0;
+  
+    &::-webkit-slider-thumb {
+      appearance: none; 
+      /* creating a custom design */
+      height: 24px;
+      width: 24px;
+      background-color: #fff;
+      border-radius: 50%;
+      border: 6px solid $main-color;
+      /*  slider progress trick  */
+      box-shadow: -600px 0 0 588px $main-color;
+    }
+  }
+
 }
 
 /****** Media queries ***********/
