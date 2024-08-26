@@ -7,6 +7,7 @@ import { ProfileBadge } from "../components/profileBadge"
 
 import { useFetch, useConnexion } from "../assets/hooks"
 import { useEffect } from "react"
+import { Navigate } from "react-router-dom"
 
 export function Rental ()   {
     const {urlid} = useParams()
@@ -27,7 +28,7 @@ export function Rental ()   {
                     
                     isLoading && <div>Loading</div> ||
                     error && (
-                        window.location.href = `/error/${error}`
+                        <Navigate to={"/error/"+error} replace={true} />
                     ) ||                    
                     apiData &&
                     tempArray.map((data, index) => (

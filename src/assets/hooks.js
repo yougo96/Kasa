@@ -29,8 +29,11 @@ export function useFetch() {
         })
         .catch((error) => {
             setIsLoading(false)
-            setError(error.message)
-            console.log(error)
+            if (error.message === "Failed to fetch") {
+                setError("403")
+            } else {
+                setError(error.message)
+            }            
         })
         .finally(
             setError(null)

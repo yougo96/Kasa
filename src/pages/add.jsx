@@ -1,5 +1,6 @@
 import { useState } from "react"
 import { useFetch, useConnexion } from "../assets/hooks"
+import { Navigate } from "react-router-dom"
 
 export function Add ()   {
     
@@ -78,7 +79,7 @@ export function Add ()   {
         )
         : 
         (
-            window.location.href = `/error/`
+            <Navigate to={"/error/"+"401"} replace={true} />
         )
 
     )
