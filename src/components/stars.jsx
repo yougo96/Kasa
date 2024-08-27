@@ -7,10 +7,10 @@ export function Stars ({children})   {
         <div className="stars">
             <ul>
                 {[...Array(starsNumber)].map((data, index) => (
-                    <li key={index} ><i className="bi bi-star-fill bi-main"></i></li>
+                    <li key={"star1"+index} ><i className="bi bi-star-fill bi-main"></i></li>
                 ))}
                 {[...Array(5 - starsNumber)].map((data, index) => (
-                    <li key={index} ><i className="bi bi-star-fill"></i></li>
+                    <li key={"star2"+index} ><i className="bi bi-star-fill"></i></li>
                 ))}
             </ul>
        </div>

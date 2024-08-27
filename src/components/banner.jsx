@@ -30,10 +30,9 @@ export function Banner({ children, src, height }) {
         <>
         
         <div className='banner-Carousel' style={{transform: `translateX(${count * -100}%)`}}>        
-        {src.map((data, index) => (
-            <img loading="lazy" src={data} alt="" key={index} style={{transform: `translateX(${100 * index}%)`}}/>
-        ))}
-        {/* <img loading="lazy" src={null} alt="" style={{backgroundImage: `url(${src[count]})`}}/> */}
+          {src.map((data, index) => (
+              <img key={"carousel"+index} loading="lazy" src={data} alt="" style={{transform: `translateX(${100 * index}%)`}}/>
+          ))}
         </div>
 
         <button className="banner-btn" data-action="prev" onClick={changeCount}><i className="bi bi-chevron-left"></i></button>

@@ -40,7 +40,7 @@ export function useFetch() {
         )
     }
 
-    console.log(apiData, isLoading, error)
+    // console.log(apiData, isLoading, error)
     return { makeRequest, apiData, isLoading, error }
 
 }

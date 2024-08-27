@@ -6,6 +6,7 @@ import { Stars } from "../components/stars"
 import { ProfileBadge } from "../components/profileBadge"
 
 import { useFetch, useConnexion } from "../assets/hooks"
+import React from "react";
 import { useEffect } from "react"
 import { Navigate } from "react-router-dom"
 
@@ -32,35 +33,35 @@ export function Rental ()   {
                     ) ||                    
                     apiData &&
                     tempArray.map((data, index) => (
-                        <>
-                            <Banner src={data.pictures} height="32rem"></Banner>
+                        <React.Fragment key={index}>
+                            <Banner key={"ba" + index} src={data.pictures} height="32rem"></Banner>
 
-                            <section className="rental-infos">
+                            <section key={"ri" + index} className="rental-infos">
                                 <div className="rental-infos-1">
                                     <div className="rental-title">
                                         <h1>{data.title}</h1>
                                         <span>{data.location}</span>
                                     </div>
-                                    <Tags>{data.tags}</Tags>
+                                    <Tags key={"rita" + index}>{data.tags}</Tags>
                                 </div>
                                 <div className="rental-infos-2">
-                                    <ProfileBadge>{data.host}</ProfileBadge>
-                                    <Stars>{data.rating}</Stars>
+                                    <ProfileBadge key={"repr" + index}>{data.host}</ProfileBadge>
+                                    <Stars key={"rest" + index}>{data.rating}</Stars>
                                 </div>
                             </section>
 
-                            <section className="rental-details">
-                                <Collapse key={"co-rd" + index} title="Description">
+                            <section key={"rd" + index} className="rental-details">
+                                <Collapse key={"rddco" + index} title="Description">
                                     {data.description}
                                 </Collapse>
                                 
-                                <Collapse key={"co-re" + index} title="Equipements">
+                                <Collapse key={"rdeco" + index} title="Equipements">
                                     {Array.isArray(data.equipments) && data.equipments.map((equipments, index) => (
-                                        <p key={"re" + index}>{equipments}</p>
+                                        <p key={"rep" + index}>{equipments}</p>
                                     ))}
                                 </Collapse>
                             </section>
-                        </>
+                        </React.Fragment>
                     ))
                 }
             </div>

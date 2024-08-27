@@ -6,7 +6,7 @@ export function Tags ({children})   {
        <ul className="tags">
             {Array.isArray(children) && 
                 children.map((data, index) => (
-                    <li key={index}>{data}</li>
+                    <li key={"tag"+index}>{data}</li>
                 ))
             }             
        </ul>
