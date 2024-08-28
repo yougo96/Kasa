@@ -1,14 +1,9 @@
 # Kasa
 
-React + Vite
-
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
-
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-
+React + Vite template
 
 ### run project
-vite : 'npm run dev' + jsonserver 'json-server --watch db.json'
+Terminal vite : `npm i` > `npm run dev`
+Terminal jsonserver : `npm install -g json-server@0.17.4` > `json-server --watch db.json`
+
+fake login user : `admin@kasa.fr` `admin`
