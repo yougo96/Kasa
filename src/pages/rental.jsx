@@ -9,6 +9,8 @@ import { useFetch } from "../assets/hooks"
 import { useEffect } from "react"
 import { Navigate } from "react-router-dom"
 
+import './rental.scss'
+
 export function Rental ()   {
     const {urlid} = useParams()
 

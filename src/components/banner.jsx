@@ -35,8 +35,13 @@ export function Banner({ children, src, height }) {
           ))}
         </div>
 
-        <button className="banner-btn" data-action="prev" onClick={changeCount}><i className="bi bi-chevron-left"></i></button>
-        <button className="banner-btn" data-action="next" onClick={changeCount}><i className="bi bi-chevron-right"></i></button>
+        { src.length > 1 ? 
+          <>
+          <button className="banner-btn" data-action="prev" onClick={changeCount}><i className="bi bi-chevron-left"></i></button>
+          <button className="banner-btn" data-action="next" onClick={changeCount}><i className="bi bi-chevron-right"></i></button>
+          </>
+        : null
+        }
         
         <div className="banner-count">
             <span>{count + 1}</span>

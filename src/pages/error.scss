@@ -1,0 +1,27 @@
+@import "src/assets/_variables.scss";
+
+.error-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 140px;
+    padding: 140px 0;
+  
+    h1 {
+      margin: 0;
+      font-size: 16rem;
+      font-weight: 700;
+      color: $main-color;
+    }
+    h2 {
+      margin: 0;
+      font-size: 2.2rem;
+      text-align: center;
+      color: $main-color;
+    }
+    a {
+      font-size: 1.18rem;
+      color: black;
+    }
+  }

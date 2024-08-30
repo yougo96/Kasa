@@ -1,0 +1,21 @@
+@import "src/assets/_variables.scss";
+
+.home-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 60px;
+    padding: 50px;
+    margin-top: 50px;
+    border-radius: 25px;
+    background-color: $secondary-color;
+  
+    @media screen and (max-width: $medium) {
+      grid-template-columns: 1fr 1fr;
+      padding: 20px;
+    }
+    @media screen and (max-width: $small) {
+      grid-template-columns: 1fr;
+      background-color: transparent;
+      padding: 0;
+    }
+  }

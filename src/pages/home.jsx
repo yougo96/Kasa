@@ -4,6 +4,8 @@ import { NavLink } from "react-router-dom"
 import { useFetch, useConnexion } from "../assets/hooks"
 import { useEffect } from "react"
 
+import './home.scss'
+
 export function Home ()   {
 
     const { connected } = useConnexion()

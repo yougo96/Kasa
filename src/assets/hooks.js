@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react"
+import { useState } from "react"
 const apiUrl = "http://localhost:3000/"
 
 export function useFetch() {

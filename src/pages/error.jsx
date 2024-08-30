@@ -1,6 +1,8 @@
 // import { useRouteError } from "react-router-dom"
 import { NavLink, useParams } from 'react-router-dom';
 
+import './error.scss'
+
 export function Error () {
 
     // const error = useRouteError()

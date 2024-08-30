@@ -15,7 +15,7 @@ header {
             gap: 57px;
 
             @media screen and (max-width: $small) {
-                flex-direction: column;
+                // flex-direction: column;
                 gap: 8px;
             }
         }

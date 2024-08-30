@@ -3,6 +3,8 @@ import { Collapse } from "../components/collapse"
 import { useFetch, useConnexion } from "../assets/hooks"
 import { useEffect } from "react"
 
+import './about.scss'
+
 export function About ()   {
 
     const { makeRequest, apiData, isLoading, error } = useFetch('about')

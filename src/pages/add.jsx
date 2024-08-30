@@ -2,6 +2,8 @@ import { useState } from "react"
 import { useFetch, useConnexion } from "../assets/hooks"
 import { Navigate } from "react-router-dom"
 
+import './add.scss'
+
 export function Add ()   {
     
     const { connected } = useConnexion()
