@@ -7,7 +7,7 @@ import './about.scss'
 
 export function About ()   {
 
-    const { makeRequest, apiData, isLoading, error } = useFetch('about')
+    const { makeRequest, apiData, isLoading, error } = useFetch()
 
     useEffect(() => {
         makeRequest('about')
