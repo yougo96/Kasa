@@ -1,5 +1,13 @@
+@import "src/assets/_variables.scss";
+
 .about-container {
   display: flex;
   flex-direction: column;
   gap: 30px;
+  padding: 0 10rem;
+
+  @media screen and (max-width: $small) {
+    // flex-direction: column;
+    padding: 0;
+  }
 }

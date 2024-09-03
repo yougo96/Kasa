@@ -16,7 +16,7 @@ export function About ()   {
     return (
         <div className="main-container">
             <Banner src="/bannerAbout.png">&nbsp;</Banner>
-            <h1>About</h1>
+            <br /><br />
             <div className="about-container">
                 {
                     error && <div>Error : {error}</div> || isLoading && <div>Loading</div> || 

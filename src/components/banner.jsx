@@ -40,7 +40,7 @@ export function Banner({ children, src, height }) {
           <button className="banner-btn" data-action="prev" onClick={changeCount}><i className="bi bi-chevron-left"></i></button>
           <button className="banner-btn" data-action="next" onClick={changeCount}><i className="bi bi-chevron-right"></i></button>
           </>
-        : null
+          : null
         }
         
         <div className="banner-count">
