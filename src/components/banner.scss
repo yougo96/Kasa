@@ -91,5 +91,9 @@
         font-weight: 700;
         text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000, 0px 4px 4px #00000040;
         margin: 0.4em;
+        @media screen and (max-width: $small) {
+            margin-right: 4em;
+            font-size: 24px;
+        }
     }
 }

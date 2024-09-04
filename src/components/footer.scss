@@ -1,7 +1,10 @@
+@import "src/assets/_variables.scss";
+
 footer {
     display: flex;
     flex-direction: column;
     align-items: center;
+    text-align: center;
 
     background-color: black;
     color: white;
@@ -13,5 +16,9 @@ footer {
     img {
         height: 40px;
         filter: invert(1);
+    }
+
+    p {
+        width: 40%;
     }
 }
