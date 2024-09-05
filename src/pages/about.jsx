@@ -1,6 +1,6 @@
 import { Banner } from "../components/banner"
 import { Collapse } from "../components/collapse"
-import { useFetch } from "../assets/hooks"
+import { useFetch, useConnexion } from "../assets/hooks"
 import { useEffect } from "react"
 
 import './about.scss'

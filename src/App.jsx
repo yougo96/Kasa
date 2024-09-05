@@ -1,3 +1,5 @@
+import { useState } from 'react'
+
 // Router
 import { createBrowserRouter, Router, RouterProvider } from 'react-router-dom'
 import { NavLink } from 'react-router-dom';
@@ -6,7 +8,9 @@ import { Outlet } from 'react-router-dom';
 // Pages
 import { Home } from './pages/home.jsx'
 import { About } from './pages/about.jsx'
+import { Login } from './pages/login.jsx'
 import { Rental } from './pages/rental.jsx'
+import { Add } from './pages/add.jsx'
 import { Error } from './pages/error.jsx'
 
 // Components
@@ -31,8 +35,16 @@ const router = createBrowserRouter([
         element: <About />,
       },
       {
+        path: 'login',
+        element: <Login />,
+      },
+      {
         path: 'rental/:urlid',
         element: <Rental />,
+      },
+      {
+        path: 'add',
+        element: <Add />,
       },
       {
         path: 'error/:urlerror',
