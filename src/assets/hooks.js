@@ -44,12 +44,3 @@ export function useFetch() {
     return { makeRequest, apiData, isLoading, error }
 
 }
-
-export function useConnexion() {
-    const email = sessionStorage.getItem("email")
-    const password = sessionStorage.getItem("password")
-
-    const [connected, setConnected] = useState(email && password)
-
-    return {connected}
-}
