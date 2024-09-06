@@ -22,7 +22,7 @@ export function Header ()   {
                 <div className='nav-group'>
                     <NavLink to="/">Accueil</NavLink>
                     <NavLink to="/about">A propos</NavLink>
-                    {/* {isConnected ? <a onClick={logout}>Deconnexion</a> : <NavLink to="/login">Connexion</NavLink> } */}
+                    {isConnected ? <a onClick={logout}>Deconnexion</a> : <NavLink to="/login">Connexion</NavLink> }
                 </div>                       
             </nav>
         </header>
