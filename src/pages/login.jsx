@@ -40,8 +40,8 @@ export function Login ()   {
                 {formValid ? null : <h3 role="alert" style={{color:"red"}}>Invalid {error}</h3>}
                 <span></span>
                 <form onSubmit={handleFetchHook}>
-                    <input type="email" name="email" placeholder="Email" required/>
-                    <input type="password" name="password" placeholder="Password" required/>
+                    <input type="email" name="email" placeholder="Email" value="admin@kasa.fr" required/>
+                    <input type="password" name="password" placeholder="Password" value="admin" required/>
                     <input type="submit" value="Se connecter" />
                 </form>
             </article>

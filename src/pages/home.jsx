@@ -12,7 +12,7 @@ export function Home ()   {
     const { makeRequest, apiData, isLoading, error } = useFetch()
 
     useEffect(() => {
-        makeRequest('rental')
+        makeRequest('rentals')
     }, [])
    
     return (

@@ -8,7 +8,7 @@ export function RentalCard ({id, title, src})   {
 
     const handleDeleteRental = async (event) => {
         event.stopPropagation()
-        makeRequest('rental/'+id, {
+        makeRequest('rentals/'+id, {
             method: "DELETE"
         })
         window.location.reload()
