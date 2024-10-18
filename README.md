@@ -3,7 +3,7 @@
 React + Vite template
 
 # Deployment
-https://kasa-eosin-ten.vercel.app
+https://kasa-build.vercel.app
 
 ### run project
 Terminal 1 (vite) : `npm i` > `npm run dev`
