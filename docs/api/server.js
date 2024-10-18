@@ -1,6 +1,5 @@
 // See https://github.com/typicode/json-server#module
-// const jsonServer = require('json-server')
-import jsonServer from 'json-server'
+const jsonServer = require('json-server')
 
 const server = jsonServer.create()
 
@@ -29,4 +28,4 @@ server.listen(3000, () => {
 })
 
 // Export the Server API
-export { server }
+module.exports = server
