@@ -1,5 +1,6 @@
 import { useState } from "react"
-const apiUrl = "http://localhost:3000/"
+// const apiUrl = "http://localhost:3000/"
+const apiUrl = "https://kasa-eosin-ten.vercel.app/"
 
 export function useFetch() {
     
