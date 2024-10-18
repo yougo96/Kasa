@@ -1,5 +1,7 @@
 import { useState } from "react"
-const apiUrl = "http://localhost:3000/"
+const apiUrl = new URL(location.href)
+apiUrl.port = '3000';
+// const apiUrl = "http://localhost:3000/"
 // const apiUrl = "https://kasa-eosin-ten.vercel.app:3000/"
 
 export function useFetch() {
