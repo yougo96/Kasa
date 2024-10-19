@@ -34,7 +34,7 @@ export function Add ()   {
             "tags": formData.getAll("tags").toString().split(",")
           }
 
-        await makeRequest('rentals', {
+        await makeRequest('rental', {
             method: "POST",
             headers: {
                 'Content-Type': 'application/json',

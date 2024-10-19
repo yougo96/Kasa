@@ -17,7 +17,7 @@ export function Rental ()   {
     const { makeRequest, apiData, isLoading, error } = useFetch()
 
     useEffect   (() => {
-        makeRequest('rentals/' + urlid)
+        makeRequest('rental/' + urlid)
     }, [])
     
     return (
