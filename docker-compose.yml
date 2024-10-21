@@ -1,0 +1,19 @@
+version: '3.8'
+services:
+
+  react-build:
+    build: ./docs
+    ports:
+      - "8080:80"
+    volumes:
+      - "./docs:/usr/share/nginx/html"
+    container_name: kasa-build
+
+  react-json:
+    build: ./back
+    ports:
+      - "3000:3000"
+    volumes:
+      - "./back:/app"
+      - "/app/node_modules"
+    container_name: kasa-json
