@@ -1,32 +1,32 @@
 version: '3.8'
 services:
 
-  react-build:
+  kasa-build:
     build: ./docs
     ports:
-      - "8080:80"
+      # - "8080:80"
     labels:
       - traefik.enable=true
-      - traefik.http.routers.astro-build.rule=Host(`kasa.pradierh.fr`)
-      - traefik.http.routers.astro-build.entrypoints=websecure
-      - traefik.http.routers.astro-build.tls=true
-      - traefik.http.routers.astro-build.tls.certresolver=myresolver
-      - traefik.http.services.astro-build.loadbalancer.server.port=80
+      - traefik.http.routers.kasa-build.rule=Host(`kasa.pradierh.fr`)
+      - traefik.http.routers.kasa-build.entrypoints=websecure
+      - traefik.http.routers.kasa-build.tls=true
+      - traefik.http.routers.kasa-build.tls.certresolver=myresolver
+      - traefik.http.services.kasa-build.loadbalancer.server.port=80
     volumes:
       - "./docs:/usr/share/nginx/html"
     container_name: kasa-build
 
-  react-json:
+  kasa-json:
     build: ./back
     ports:
-      - "3000:3000"
+      # - "3000:3000"
     labels:
       - traefik.enable=true
-      - traefik.http.routers.astro-build.rule=Host(`kasa.pradierh.fr`)
-      - traefik.http.routers.astro-build.entrypoints=websecure
-      - traefik.http.routers.astro-build.tls=true
-      - traefik.http.routers.astro-build.tls.certresolver=myresolver
-      - traefik.http.services.astro-build.loadbalancer.server.port=3000
+      - traefik.http.routers.kasa-json.rule=Host(`kasa.pradierh.fr`)
+      - traefik.http.routers.kasa-json.entrypoints=websecure
+      - traefik.http.routers.kasa-json.tls=true
+      - traefik.http.routers.kasa-json.tls.certresolver=myresolver
+      - traefik.http.services.kasa-json.loadbalancer.server.port=3000
     volumes:
       - "./back:/app"
       - "/app/node_modules"
