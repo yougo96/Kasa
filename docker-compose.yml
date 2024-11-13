@@ -3,8 +3,8 @@ services:
 
   kasa-build:
     build: ./docs
-    ports:
-      - "8080:80"
+    # ports:
+    #   - "8080:80"
     labels:
       - traefik.enable=true
       - traefik.http.routers.kasa-build.rule=Host(`kasa.pradierh.fr`)
@@ -20,8 +20,8 @@ services:
 
   kasa-json:
     build: ./back
-    ports:
-      - "3000:3000"
+    # ports:
+    #   - "3000:3000"
     labels:
       - traefik.enable=true
       - traefik.http.routers.kasa-json.rule=Host(`kasa.pradierh.fr`)
