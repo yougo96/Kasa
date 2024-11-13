@@ -5,6 +5,13 @@ services:
     build: ./docs
     ports:
       - "8080:80"
+    labels:
+      - traefik.enable=true
+      - traefik.http.routers.astro-build.rule=Host(`kasa.pradierh.fr`)
+      - traefik.http.routers.astro-build.entrypoints=websecure
+      - traefik.http.routers.astro-build.tls=true
+      - traefik.http.routers.astro-build.tls.certresolver=myresolver
+      - traefik.http.services.astro-build.loadbalancer.server.port=80
     volumes:
       - "./docs:/usr/share/nginx/html"
     container_name: kasa-build
@@ -17,3 +24,7 @@ services:
       - "./back:/app"
       - "/app/node_modules"
     container_name: kasa-json
+
+networks:
+  proxy:
+    external: true
