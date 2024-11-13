@@ -20,6 +20,13 @@ services:
     build: ./back
     ports:
       - "3000:3000"
+    labels:
+      - traefik.enable=true
+      - traefik.http.routers.astro-build.rule=Host(`kasa.pradierh.fr`)
+      - traefik.http.routers.astro-build.entrypoints=websecure
+      - traefik.http.routers.astro-build.tls=true
+      - traefik.http.routers.astro-build.tls.certresolver=myresolver
+      - traefik.http.services.astro-build.loadbalancer.server.port=3000
     volumes:
       - "./back:/app"
       - "/app/node_modules"
