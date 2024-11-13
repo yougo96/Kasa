@@ -3,7 +3,7 @@ services:
 
   kasa-build:
     build: ./docs
-    ports:
+    # ports:
       # - "8080:80"
     labels:
       - traefik.enable=true
@@ -18,7 +18,7 @@ services:
 
   kasa-json:
     build: ./back
-    ports:
+    # ports:
       # - "3000:3000"
     labels:
       - traefik.enable=true
