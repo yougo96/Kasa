@@ -4,7 +4,7 @@ services:
   kasa-build:
     build: ./docs
     # ports:
-    #   - "8080:80"
+    #   - "81:80"
     labels:
       - traefik.enable=true
       - traefik.http.routers.kasa-build.rule=Host(`kasa.pradierh.fr`)
@@ -18,13 +18,22 @@ services:
     networks:
       - proxy
 
+  kasa-dev:
+    build: .
+    # ports:
+    #   - "5173:5173"
+    volumes:
+      - "./:/app"
+      - "/app/node_modules"
+    container_name: kasa-dev
+
   kasa-json:
     build: ./back
     # ports:
     #   - "3000:3000"
     labels:
       - traefik.enable=true
-      - traefik.http.routers.kasa-json.rule=Host(`kasa.pradierh.fr`)
+      - traefik.http.routers.kasa-json.rule=Host(`kasa.pradierh.fr`) && PathPrefix(`/api`)
       - traefik.http.routers.kasa-json.entrypoints=websecure
       - traefik.http.routers.kasa-json.tls=true
       - traefik.http.routers.kasa-json.tls.certresolver=myresolver

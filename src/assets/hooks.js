@@ -1,7 +1,7 @@
 import { useState } from "react"
 let apiUrl = new URL(location.origin)
-apiUrl.port = '3000';
-apiUrl += 'api-'
+apiUrl.port = '';
+apiUrl += 'api/'
 // const apiUrl = "http://localhost:3000/"
 // const apiUrl = "https://kasa-eosin-ten.vercel.app:3000/"
 
